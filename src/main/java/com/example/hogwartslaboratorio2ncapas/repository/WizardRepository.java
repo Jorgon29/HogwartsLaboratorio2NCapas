@@ -11,8 +11,7 @@ import java.util.UUID;
 public interface WizardRepository extends JpaRepository<Wizard, UUID> {
     List<Wizard> findWizardsByPatronus(String patronus);
 
-    List<Wizard> findWizardsIsDeatheaterTrue();
+    List<Wizard> findWizardsByIsDeatheaterTrue();
 
-    void updateWizardById(UUID id, Wizard wizard);
 }
 

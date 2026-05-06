@@ -31,12 +31,13 @@ public class WizardServiceImpl implements WizardService {
 
     @Override
     public List<Wizard> findWizardsIsDeatheaterTrue() {
-        return wizardRepository.findWizardsIsDeatheaterTrue();
+        return wizardRepository.findWizardsByIsDeatheaterTrue();
     }
 
     @Override
     public void updateWizardById(UUID id, Wizard wizard) {
-        wizardRepository.updateWizardById(id, wizard);
+        wizard.setId(id);
+        wizardRepository.save(wizard);
     }
 
     @Override
